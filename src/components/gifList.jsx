@@ -5,10 +5,10 @@ import Gif from './gif';
 // eslint-disable-next-line react/prefer-stateless-function
 export default class GifList extends Component {
   render() {
-    const { gifIds } = this.props;
+    const { gifIdList, changeSelectGif } = this.props;
     return (
       <div className="gif-list">
-        { gifIds.map(aGifId => <Gif gifId={aGifId} />) }
+        { gifIdList.map(gifId => <Gif gifId={gifId} key={gifId} changeSelectGif={changeSelectGif} />) }
       </div>
     );
   }
